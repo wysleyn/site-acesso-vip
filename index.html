@@ -3,69 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acesso Exclusivo</title>
+    <title>Mirella David - VIP</title>
     <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            background-color: #0f0f0f;
+            background: linear-gradient(180deg, #0f0f0f 0%, #1a0505 100%);
             color: white;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
             height: 100vh;
-            margin: 0;
-            text-align: center;
+            overflow: hidden;
         }
-        .container {
-            padding: 20px;
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 20px;
+            border-radius: 20px;
+            width: 90%;
             max-width: 400px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
-        .warning {
-            border: 1px solid #ff0000;
-            padding: 10px;
-            color: #ff4444;
-            font-size: 0.8rem;
+        .profile-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            border: 3px solid #ff0050;
             margin-bottom: 20px;
-            text-transform: uppercase;
+            object-fit: cover;
         }
-        h1 { font-size: 1.5rem; margin-bottom: 10px; }
-        p { color: #ccc; margin-bottom: 30px; }
+        h1 { font-size: 1.8rem; margin-bottom: 10px; color: #fff; }
+        p { color: #aaa; font-size: 1rem; line-height: 1.5; margin-bottom: 30px; }
         
-        .btn-telegram {
-            background-color: #0088cc;
+        .btn-link {
+            background: linear-gradient(45deg, #ff0050, #ff5000);
             color: white;
             text-decoration: none;
-            padding: 15px 30px;
-            border-radius: 50px;
+            padding: 18px;
+            border-radius: 12px;
             font-weight: bold;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             display: block;
-            transition: transform 0.2s;
-            box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse 1.5s infinite;
+            box-shadow: 0 0 20px rgba(255, 0, 80, 0.4);
         }
-        .btn-telegram:active { transform: scale(0.95); }
-        
-        .footer {
-            margin-top: 50px;
-            font-size: 0.7rem;
-            color: #555;
+
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 0, 80, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(255, 0, 80, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 0, 80, 0); }
         }
+
+        .footer { margin-top: 30px; font-size: 0.7rem; color: #444; }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <div class="warning">Atenção: Conteúdo Restrito</div>
+    <div class="card">
+        <img src="https://via.placeholder.com/150" alt="Mirella David" class="profile-img">
         
-        <h1>Você foi convidado para o Grupo VIP</h1>
-        <p>Clique no botão abaixo para verificar sua idade e liberar seu acesso ao conteúdo exclusivo no Telegram.</p>
+        <h1>Mirella David</h1>
+        <p>Acesse agora o conteúdo exclusivo que foi banido de outras redes sociais.</p>
 
-        <a href="Https://t.me/Mirella_david_bot" class="btn-telegram">QUERO ENTRAR NO GRUPO</a>
+        <a href="https://t.me/Mirella_david_bot" class="btn-link">QUERO ACESSO AGORA</a>
 
         <div class="footer">
-            Ao clicar, você confirma ter mais de 18 anos.<br>
-            Termos de Uso e Privacidade.
+            CONTEÚDO PARA MAIORES DE 18 ANOS<br>
+            © 2026 Mirella David - Todos os direitos reservados.
         </div>
     </div>
 
