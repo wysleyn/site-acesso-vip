@@ -133,6 +133,7 @@
             animation: pulse 1.5s infinite;
             box-shadow: 0 0 20px rgba(255, 0, 80, 0.4);
             margin-bottom: 12px;
+            cursor: pointer;
         }
 
         @keyframes pulse {
@@ -197,7 +198,7 @@
             Oferta expira em: <strong id="timer">10:00</strong>
         </div>
 
-        <a href="https://t.me/Mirella_david_bot" class="btn-link">
+        <a href="#" onclick="abrirTelegram(); return false;" class="btn-link">
             🔓 QUERO ACESSO AGORA
         </a>
 
@@ -213,24 +214,42 @@
     </div>
 
     <script>
+        // Abrir Telegram direto no app
+        function abrirTelegram() {
+            var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            
+            if (isMobile) {
+                // Tenta abrir o app direto
+                window.location.href = "tg://resolve?domain=Mirella_david_bot";
+                
+                // Se não abrir em 2 segundos, manda pro link web
+                setTimeout(function() {
+                    window.location.href = "https://t.me/Mirella_david_bot";
+                }, 2000);
+            } else {
+                // No PC abre o link web
+                window.open("https://t.me/Mirella_david_bot", "_blank");
+            }
+        }
+
         // Contador regressivo
-        let tempo = 10 * 60;
-        const timer = document.getElementById('timer');
-        setInterval(() => {
+        var tempo = 10 * 60;
+        var timer = document.getElementById('timer');
+        setInterval(function() {
             if (tempo <= 0) tempo = 10 * 60;
             tempo--;
-            const m = String(Math.floor(tempo / 60)).padStart(2, '0');
-            const s = String(tempo % 60).padStart(2, '0');
-            timer.textContent = `${m}:${s}`;
+            var m = String(Math.floor(tempo / 60)).padStart(2, '0');
+            var s = String(tempo % 60).padStart(2, '0');
+            timer.textContent = m + ':' + s;
         }, 1000);
 
         // Vagas diminuindo aleatoriamente
-        const vagas = document.getElementById('vagas');
-        let v = 7;
-        setInterval(() => {
+        var vagasEl = document.getElementById('vagas');
+        var v = 7;
+        setInterval(function() {
             if (v > 2 && Math.random() > 0.7) {
                 v--;
-                vagas.textContent = v;
+                vagasEl.textContent = v;
             }
         }, 30000);
     </script>
